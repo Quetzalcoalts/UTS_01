@@ -24,11 +24,12 @@ void main(List<String> arguments) {
         counter = 1;
       }
 
-      for (int j = 0; j < angka; j++) {
-        //atas dan bawah
-        if(arr == kata.length){
+      if(arr == kata.length){
           arr = 0;
         } 
+
+      for (int j = 0; j < angka; j++) {
+        //atas dan bawah
         if (i == 1 || i == angka) {
           if (j == (angka - 1) / 2) {
             stdout.write("+");
