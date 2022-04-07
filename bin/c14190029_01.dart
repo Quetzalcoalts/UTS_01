@@ -10,6 +10,7 @@ void main(List<String> arguments) {
   String? input = stdin.readLineSync();
   int c = 0;
   int counter = 1;
+  int arr = 0;
 
   if(angka % 2 != 0){
 
@@ -25,7 +26,9 @@ void main(List<String> arguments) {
 
       for (int j = 0; j < angka; j++) {
         //atas dan bawah
-
+        if(arr == kata.length){
+          arr = 0;
+        } 
         if (i == 1 || i == angka) {
           if (j == (angka - 1) / 2) {
             stdout.write("+");
@@ -37,14 +40,16 @@ void main(List<String> arguments) {
           if (j == 0 || j == angka-1) {
             stdout.write("+");
           } else {
-            stdout.write(" ");
+            stdout.write("${input![arr]}");
+            arr++;
           }
         } else {
           if (j == ((angka - 1) / 2) - c || j == ((angka - 1) / 2) + c) {
             stdout.write("+");
           } else if (j >= ((angka - 1) / 2) - c && j <= (angka - 1) / 2 ||
               j <= ((angka - 1) / 2) + c && j >= (angka - 1) / 2) {
-            stdout.write(" ");
+            stdout.write("${input![arr]}");
+            arr++;
           } else {
             stdout.write(" ");
           }
